@@ -25,13 +25,35 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link" href="<%=request.getContextPath()%>/home">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/products">Product</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						href="<%=request.getContextPath()%>/home">Home</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<%=request.getContextPath()%>/products">Product</a></li>
 				</ul>
 			</div>
 		</nav>
 		<br>
-		<h1>Home page</h1>
+		<div class="card">
+			<div class="card-header">${title}</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-3">Id:</div>
+					<div class="col-9">${product.getId()}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Code:</div>
+					<div class="col-9">${product.getCode()}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Name:</div>
+					<div class="col-9">${product.getName()}</div>
+				</div>
+				<div class="row">
+					<div class="col-3">Price:</div>
+					<div class="col-9">${product.getPrice()}</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

@@ -31,7 +31,35 @@
 			</div>
 		</nav>
 		<br>
-		<h1>Home page</h1>
+		<div class="card">
+			<div class="card-header">${title}</div>
+			<div class="card-body">
+			<a href="products/new" class="btn btn-primary m-2">Add</a>
+			
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Name</th>
+							<th scope="col">Code</th>
+							<th scope="col">Price</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="p" items="${products}">
+							<tr>
+								<th scope="row">${p.getId()}</th>
+								<td><a href="<%=request.getContextPath()%>/products/${p.getId()}"> ${p.getName()}</a></td>
+								<td>${p.getCode()}</td>
+								<td>${p.getPrice()}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+				<a href="<%=request.getContextPath()%>/home" class="btn btn-primary">Go home</a>
+			</div>
+		</div>
+		<div></div>
 	</div>
 </body>
 </html>
