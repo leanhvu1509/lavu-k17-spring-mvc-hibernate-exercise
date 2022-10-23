@@ -30,8 +30,43 @@
 				</ul>
 			</div>
 		</nav>
-		<br>
-		<h1>Home page</h1>
+		<p>
+			<c:if test="${message != null}">
+				<span class="message alert alert-success" >${message}</span>
+			</c:if>
+		</p>
+				
+		<div class="card">
+			<div class="card-header">${title}</div>
+			<div class="card-body">
+				<form:form action="new" modelAttribute="product"
+					method="post">
+
+					<div class="form-group row">
+						<label for="code" class="col-sm-2 col-form-label">Code</label>
+						<div class="col-sm-7">
+							<form:input type="text" class="form-control" path="code"
+								placeholder="Enter code"></form:input>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="name" class="col-sm-2 col-form-label">Name</label>
+						<div class="col-sm-7">
+							<form:input type="text" class="form-control" path="name"
+								placeholder="Enter name"></form:input>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="product" class="col-sm-2 col-form-label">Price</label>
+						<div class="col-sm-7">
+							<form:input type="number" class="form-control" path="price"
+								placeholder="Enter price"></form:input>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</form:form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
